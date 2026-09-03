@@ -1,203 +1,781 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MotoZone — o mundo das motocicletas em um só lugar.">
     <title>MotoZone | Mundo das Motos</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- CABEÇALHO -->
-    <header>
-        <h1>MOTOZONE</h1>
-        <p>Potência, velocidade e liberdade sobre duas rodas.</p>
 
-        <nav>
+    <header class="header">
+
+        <div class="logo">
+            MOTO<span>ZONE</span>
+        </div>
+
+        <nav class="menu">
             <a href="#inicio">Início</a>
-            <a href="#motos">Motos</a>
+            <a href="#destaques">Destaques</a>
             <a href="#categorias">Categorias</a>
+            <a href="#modelos">Modelos</a>
+            <a href="#comparativo">Comparativo</a>
+            <a href="#tecnologia">Tecnologia</a>
             <a href="#sobre">Sobre</a>
             <a href="#contato">Contato</a>
         </nav>
+
     </header>
+
 
     <main>
 
         <!-- INÍCIO -->
-        <section id="inicio">
-            <h2>VIVA A EXPERIÊNCIA SOBRE DUAS RODAS</h2>
 
-            <p>
-                Descubra motos incríveis, diferentes estilos,
-                grandes marcas e tudo o que faz o mundo das motocicletas
-                ser tão apaixonante.
-            </p>
+        <section id="inicio" class="hero">
 
-            <a href="#motos">Explorar motos</a>
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    MUNDO DAS DUAS RODAS
+                </span>
+
+                <h1>
+                    MAIS QUE UMA MOTO.
+                    <span>UMA EXPERIÊNCIA.</span>
+                </h1>
+
+                <p>
+                    Descubra motocicletas incríveis, diferentes
+                    estilos, tecnologias e tudo que faz o universo
+                    das duas rodas ser tão apaixonante.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#destaques" class="button">
+                        Explorar motos
+                    </a>
+
+                    <a href="#categorias" class="button button-outline">
+                        Ver categorias
+                    </a>
+
+                </div>
+
+            </div>
+
         </section>
 
-        <hr>
 
-        <!-- MOTOS EM DESTAQUE -->
-        <section id="motos">
-            <h2>Motos em Destaque</h2>
+        <!-- DESTAQUES -->
 
-            <article>
-                <h3>Yamaha MT-09</h3>
+        <section id="destaques" class="section">
+
+            <div class="section-header">
+
+                <span>EM DESTAQUE</span>
+
+                <h2>
+                    Máquinas que impressionam
+                </h2>
+
                 <p>
-                    Uma naked esportiva conhecida pela combinação
-                    de potência, agilidade e personalidade.
+                    Conheça diferentes estilos de motocicletas
+                    e descubra o que torna cada uma especial.
                 </p>
-                <p><strong>Estilo:</strong> Naked</p>
-                <a href="#">Ver modelo</a>
-            </article>
 
-            <article>
-                <h3>Kawasaki Ninja ZX-6R</h3>
-                <p>
-                    Uma esportiva desenvolvida para entregar
-                    desempenho e uma experiência emocionante.
-                </p>
-                <p><strong>Estilo:</strong> Esportiva</p>
-                <a href="#">Ver modelo</a>
-            </article>
+            </div>
 
-            <article>
-                <h3>Honda CB 650R</h3>
-                <p>
-                    Design marcante, estilo moderno e desempenho
-                    para quem busca emoção no dia a dia.
-                </p>
-                <p><strong>Estilo:</strong> Naked</p>
-                <a href="#">Ver modelo</a>
-            </article>
 
-            <article>
-                <h3>BMW R 1300 GS</h3>
-                <p>
-                    Uma motocicleta preparada para explorar diferentes
-                    caminhos, do asfalto às grandes aventuras.
-                </p>
-                <p><strong>Estilo:</strong> Big Trail</p>
-                <a href="#">Ver modelo</a>
-            </article>
+            <div class="featured-grid">
+
+                <article class="featured-card">
+
+                    <div class="card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85"
+                            alt="Motocicleta esportiva">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>ESPORTIVA</span>
+
+                        <h3>
+                            Performance
+                        </h3>
+
+                        <p>
+                            Design agressivo e uma proposta
+                            voltada para desempenho.
+                        </p>
+
+                        <a href="#modelos">
+                            Ver modelos →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="featured-card">
+
+                    <div class="card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=85"
+                            alt="Motocicleta naked">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>NAKED</span>
+
+                        <h3>
+                            Estilo urbano
+                        </h3>
+
+                        <p>
+                            Personalidade, praticidade e
+                            diversão para as ruas.
+                        </p>
+
+                        <a href="#modelos">
+                            Ver modelos →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="featured-card">
+
+                    <div class="card-image">
+                        <img
+                            src="https://images.unsplash.com/photo-1525160354320-d8e92641c563?auto=format&fit=crop&w=1200&q=85"
+                            alt="Motocicleta adventure">
+                    </div>
+
+                    <div class="card-content">
+
+                        <span>ADVENTURE</span>
+
+                        <h3>
+                            Espírito aventureiro
+                        </h3>
+
+                        <p>
+                            Para quem gosta de viajar e
+                            descobrir novos caminhos.
+                        </p>
+
+                        <a href="#modelos">
+                            Ver modelos →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
         </section>
 
-        <hr>
 
         <!-- CATEGORIAS -->
-        <section id="categorias">
-            <h2>Encontre seu estilo</h2>
 
-            <article>
-                <h3>🏁 Esportivas</h3>
-                <p>
-                    Design agressivo, tecnologia e desempenho
-                    para quem gosta de emoção.
-                </p>
-            </article>
+        <section id="categorias" class="section dark-section">
 
-            <article>
-                <h3>⚡ Naked</h3>
-                <p>
-                    Motos versáteis, modernas e divertidas
-                    para diferentes tipos de trajetos.
-                </p>
-            </article>
+            <div class="section-header">
 
-            <article>
-                <h3>🏔️ Big Trail</h3>
-                <p>
-                    Feitas para quem deseja viajar e conhecer
-                    novos lugares sobre duas rodas.
-                </p>
-            </article>
+                <span>CATEGORIAS</span>
 
-            <article>
-                <h3>🛣️ Custom</h3>
+                <h2>
+                    Encontre seu estilo
+                </h2>
+
                 <p>
-                    Estilo clássico e personalidade para quem
-                    valoriza uma experiência diferente.
+                    Cada motocicleta possui uma proposta.
+                    Descubra qual combina com você.
                 </p>
-            </article>
+
+            </div>
+
+
+            <div class="categories-grid">
+
+                <article class="category-card">
+                    <span>01</span>
+                    <h3>Esportivas</h3>
+                    <p>
+                        Desempenho, tecnologia e design
+                        inspirado nas pistas.
+                    </p>
+                    <a href="#modelos">Explorar →</a>
+                </article>
+
+
+                <article class="category-card">
+                    <span>02</span>
+                    <h3>Naked</h3>
+                    <p>
+                        Versatilidade e personalidade
+                        para o ambiente urbano.
+                    </p>
+                    <a href="#modelos">Explorar →</a>
+                </article>
+
+
+                <article class="category-card">
+                    <span>03</span>
+                    <h3>Big Trail</h3>
+                    <p>
+                        Conforto e aventura para
+                        diferentes tipos de estrada.
+                    </p>
+                    <a href="#modelos">Explorar →</a>
+                </article>
+
+
+                <article class="category-card">
+                    <span>04</span>
+                    <h3>Custom</h3>
+                    <p>
+                        Estilo clássico e personalidade
+                        marcante.
+                    </p>
+                    <a href="#modelos">Explorar →</a>
+                </article>
+
+
+                <article class="category-card">
+                    <span>05</span>
+                    <h3>Touring</h3>
+                    <p>
+                        Pensadas para conforto e
+                        longas viagens.
+                    </p>
+                    <a href="#modelos">Explorar →</a>
+                </article>
+
+
+                <article class="category-card">
+                    <span>06</span>
+                    <h3>Urbanas</h3>
+                    <p>
+                        Praticidade e mobilidade
+                        para o dia a dia.
+                    </p>
+                    <a href="#modelos">Explorar →</a>
+                </article>
+
+            </div>
+
         </section>
 
-        <hr>
+
+        <!-- MODELOS -->
+
+        <section id="modelos" class="section">
+
+            <div class="section-header">
+
+                <span>MODELOS</span>
+
+                <h2>
+                    Destaques sobre duas rodas
+                </h2>
+
+                <p>
+                    Explore alguns modelos e conheça
+                    suas principais características.
+                </p>
+
+            </div>
+
+
+            <div class="models-grid">
+
+                <article class="model-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1558980394-0c1f2c9f7e10?auto=format&fit=crop&w=1000&q=85"
+                        alt="Moto esportiva">
+
+                    <div class="model-content">
+
+                        <span>ESPORTIVA</span>
+
+                        <h3>
+                            Speed R
+                        </h3>
+
+                        <p>
+                            Uma proposta esportiva com
+                            foco em design e performance.
+                        </p>
+
+                        <div class="model-info">
+                            <div>
+                                <small>Categoria</small>
+                                <strong>Esportiva</strong>
+                            </div>
+
+                            <div>
+                                <small>Perfil</small>
+                                <strong>Performance</strong>
+                            </div>
+                        </div>
+
+                        <button>
+                            Ver modelo
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="model-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=1000&q=85"
+                        alt="Moto naked">
+
+                    <div class="model-content">
+
+                        <span>NAKED</span>
+
+                        <h3>
+                            Street X
+                        </h3>
+
+                        <p>
+                            Uma motocicleta moderna para
+                            quem gosta de estilo urbano.
+                        </p>
+
+                        <div class="model-info">
+                            <div>
+                                <small>Categoria</small>
+                                <strong>Naked</strong>
+                            </div>
+
+                            <div>
+                                <small>Perfil</small>
+                                <strong>Urbano</strong>
+                            </div>
+                        </div>
+
+                        <button>
+                            Ver modelo
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="model-card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1000&q=85"
+                        alt="Moto adventure">
+
+                    <div class="model-content">
+
+                        <span>ADVENTURE</span>
+
+                        <h3>
+                            Explorer
+                        </h3>
+
+                        <p>
+                            Para quem transforma cada
+                            viagem em uma aventura.
+                        </p>
+
+                        <div class="model-info">
+                            <div>
+                                <small>Categoria</small>
+                                <strong>Adventure</strong>
+                            </div>
+
+                            <div>
+                                <small>Perfil</small>
+                                <strong>Viagem</strong>
+                            </div>
+                        </div>
+
+                        <button>
+                            Ver modelo
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPARATIVO -->
+
+        <section id="comparativo" class="section dark-section">
+
+            <div class="section-header">
+
+                <span>COMPARATIVO</span>
+
+                <h2>
+                    Compare os estilos
+                </h2>
+
+                <p>
+                    Entenda as diferenças entre algumas
+                    categorias de motocicletas.
+                </p>
+
+            </div>
+
+
+            <div class="comparison">
+
+                <div class="comparison-header">
+                    <span>Categoria</span>
+                    <span>Uso</span>
+                    <span>Conforto</span>
+                    <span>Desempenho</span>
+                </div>
+
+                <div class="comparison-row">
+                    <strong>Esportiva</strong>
+                    <span>Pista / Estrada</span>
+                    <span>★★★</span>
+                    <span>★★★★★</span>
+                </div>
+
+                <div class="comparison-row">
+                    <strong>Naked</strong>
+                    <span>Cidade / Estrada</span>
+                    <span>★★★★</span>
+                    <span>★★★★</span>
+                </div>
+
+                <div class="comparison-row">
+                    <strong>Big Trail</strong>
+                    <span>Viagens</span>
+                    <span>★★★★★</span>
+                    <span>★★★★</span>
+                </div>
+
+                <div class="comparison-row">
+                    <strong>Touring</strong>
+                    <span>Longas viagens</span>
+                    <span>★★★★★</span>
+                    <span>★★★</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TECNOLOGIA -->
+
+        <section id="tecnologia" class="section">
+
+            <div class="section-header">
+
+                <span>TECNOLOGIA</span>
+
+                <h2>
+                    A evolução das motocicletas
+                </h2>
+
+                <p>
+                    A tecnologia transformou a maneira como
+                    motocicletas são projetadas e utilizadas.
+                </p>
+
+            </div>
+
+
+            <div class="technology-grid">
+
+                <article>
+                    <span>01</span>
+                    <h3>Eletrônica</h3>
+                    <p>
+                        Sistemas eletrônicos cada vez mais
+                        presentes nas motocicletas modernas.
+                    </p>
+                </article>
+
+
+                <article>
+                    <span>02</span>
+                    <h3>Design</h3>
+                    <p>
+                        Formas, aerodinâmica e identidade
+                        visual fazem parte da experiência.
+                    </p>
+                </article>
+
+
+                <article>
+                    <span>03</span>
+                    <h3>Conectividade</h3>
+                    <p>
+                        Recursos digitais aproximam o piloto
+                        da motocicleta.
+                    </p>
+                </article>
+
+
+                <article>
+                    <span>04</span>
+                    <h3>Segurança</h3>
+                    <p>
+                        Tecnologias modernas auxiliam
+                        diferentes sistemas da motocicleta.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRASE DE IMPACTO -->
+
+        <section class="impact-section">
+
+            <div>
+
+                <span>
+                    DUAS RODAS. INFINITOS CAMINHOS.
+                </span>
+
+                <h2>
+                    A estrada está
+                    esperando por você.
+                </h2>
+
+                <p>
+                    Mais do que chegar ao destino,
+                    é sobre aproveitar o caminho.
+                </p>
+
+                <a href="#modelos" class="button">
+                    Descobrir modelos
+                </a>
+
+            </div>
+
+        </section>
+
 
         <!-- SOBRE -->
-        <section id="sobre">
-            <h2>Sobre a MotoZone</h2>
 
-            <p>
-                A MotoZone foi criada para reunir apaixonados por
-                motocicletas em um único lugar.
-            </p>
+        <section id="sobre" class="section about-section">
 
-            <p>
-                Aqui você pode conhecer diferentes categorias,
-                descobrir modelos e aprender mais sobre o universo
-                das duas rodas.
-            </p>
+            <div class="about-content">
+
+                <span>SOBRE A MOTOZONE</span>
+
+                <h2>
+                    Para quem entende
+                    a paixão por motos.
+                </h2>
+
+                <p>
+                    A MotoZone foi criada para reunir em um só
+                    lugar informações e conteúdos sobre o
+                    universo das motocicletas.
+                </p>
+
+                <p>
+                    Aqui você pode conhecer categorias,
+                    explorar modelos, descobrir tecnologias
+                    e aprender mais sobre o mundo das duas rodas.
+                </p>
+
+            </div>
+
+
+            <div class="about-stats">
+
+                <div>
+                    <strong>06</strong>
+                    <span>CATEGORIAS</span>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <span>RODAS</span>
+                </div>
+
+                <div>
+                    <strong>∞</strong>
+                    <span>POSSIBILIDADES</span>
+                </div>
+
+            </div>
+
         </section>
 
-        <hr>
-
-        <!-- CURIOSIDADES -->
-        <section>
-            <h2>Por que as motos conquistam tantas pessoas?</h2>
-
-            <ul>
-                <li>Liberdade para explorar novos caminhos.</li>
-                <li>Grande variedade de estilos e modelos.</li>
-                <li>Tecnologia e inovação.</li>
-                <li>Design marcante.</li>
-                <li>Experiência única de pilotagem.</li>
-            </ul>
-        </section>
-
-        <hr>
 
         <!-- CONTATO -->
-        <section id="contato">
-            <h2>Entre em contato</h2>
 
-            <p>
-                Quer saber mais sobre motos e novidades do mundo
-                das duas rodas?
-            </p>
+        <section id="contato" class="section contact-section">
 
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome">
+            <div class="contact-content">
 
-                <br><br>
+                <span>ENTRE EM CONTATO</span>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email">
+                <h2>
+                    Fale com a MotoZone
+                </h2>
 
-                <br><br>
+                <p>
+                    Tem alguma dúvida, sugestão ou quer
+                    compartilhar sua paixão por motocicletas?
+                </p>
 
-                <label for="mensagem">Mensagem:</label>
-                <br>
-                <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+            </div>
 
-                <br><br>
 
-                <button type="submit">Enviar mensagem</button>
+            <form class="contact-form">
+
+                <div class="form-group">
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="mensagem">
+                        Mensagem
+                    </label>
+
+                    <textarea
+                        id="mensagem"
+                        rows="6"
+                        placeholder="Escreva sua mensagem..."
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    Enviar mensagem
+                </button>
+
             </form>
+
         </section>
 
     </main>
 
-    <hr>
 
     <!-- RODAPÉ -->
-    <footer>
-        <h2>MOTOZONE</h2>
-        <p>Potência. Liberdade. Paixão.</p>
-        <p>&copy; 2026 MotoZone. Todos os direitos reservados.</p>
+
+    <footer class="footer">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <h2>
+                    MOTO<span>ZONE</span>
+                </h2>
+
+                <p>
+                    O mundo das motocicletas
+                    em um só lugar.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Navegação</h3>
+
+                <a href="#inicio">Início</a>
+                <a href="#destaques">Destaques</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#modelos">Modelos</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="#comparativo">Comparativo</a>
+                <a href="#tecnologia">Tecnologia</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 MotoZone. Todos os direitos reservados.
+            </p>
+
+            <p>
+                Feito para quem vive sobre duas rodas.
+            </p>
+
+        </div>
+
     </footer>
 
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>

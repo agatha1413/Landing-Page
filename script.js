@@ -1,31 +1,108 @@
-// ==============================
-// MOTOZONE - JAVASCRIPT
-// ==============================
+// ===============================
+// MOTOZONE - SCRIPT.JS
+// ===============================
 
-// ANO AUTOMÁTICO NO RODAPÉ
+// Menu suave ao clicar nos links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
 
-const ano = new Date().getFullYear();
+        const target = document.querySelector(this.getAttribute("href"));
 
-const rodape = document.querySelector("footer p:last-child");
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+    });
+});
 
-if (rodape) {
-    rodape.innerHTML = `&copy; ${ano} MotoZone. Todos os direitos reservados.`;
+
+// ===============================
+// HEADER AO ROLAR A PÁGINA
+// ===============================
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+
+// ===============================
+// BOTÕES "VER MODELO"
+// ===============================
+
+const modelButtons = document.querySelectorAll(".model-card .button");
+
+modelButtons.forEach(button => {
+    button.addEventListener("click", () => {
+
+        const card = button.closest(".model-card");
+
+        if (!card) return;
+
+        const name = card.querySelector("h3")?.textContent || "Modelo";
+
+        alert(
+            `Você selecionou a ${name}!\n\n` +
+            "Em breve você poderá visualizar todos os detalhes desse modelo."
+        );
+    });
+});
+
+
+// ===============================
+// FORMULÁRIO DE CONTATO
+// ===============================
+
+const contactForm = document.querySelector(".contact-form");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const nameInput = contactForm.querySelector('input[type="text"]');
+        const emailInput = contactForm.querySelector('input[type="email"]');
+        const messageInput = contactForm.querySelector("textarea");
+
+        const name = nameInput?.value.trim();
+        const email = emailInput?.value.trim();
+        const message = messageInput?.value.trim();
+
+        if (!name || !email || !message) {
+            alert("Preencha todos os campos antes de enviar.");
+            return;
+        }
+
+        alert(
+            `Obrigado, ${name}!\n\n` +
+            "Sua mensagem foi enviada com sucesso."
+        );
+
+        contactForm.reset();
+    });
 }
 
 
-// ==============================
+// ===============================
 // ANIMAÇÃO AO APARECER NA TELA
-// ==============================
+// ===============================
 
-const elementos = document.querySelectorAll(
-    "#motos article, #categorias article, #sobre, #contato"
+const animatedElements = document.querySelectorAll(
+    ".feature-card, .category-card, .model-card, .tech-card, .stat"
 );
 
-const observador = new IntersectionObserver(
-    (entradas) => {
-        entradas.forEach((entrada) => {
-            if (entrada.isIntersecting) {
-                entrada.target.classList.add("visivel");
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
             }
         });
     },
@@ -34,96 +111,61 @@ const observador = new IntersectionObserver(
     }
 );
 
-elementos.forEach((elemento) => {
-    elemento.classList.add("animar");
-    observador.observe(elemento);
+animatedElements.forEach(element => {
+    observer.observe(element);
 });
 
 
-// ==============================
-// LINKS "VER MODELO"
-// ==============================
+// ===============================
+// EFEITO NOS LINKS DO MENU
+// ===============================
 
-const botoesModelo = document.querySelectorAll("#motos article a");
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll(".nav-links a");
 
-botoesModelo.forEach((botao) => {
+window.addEventListener("scroll", () => {
 
-    botao.addEventListener("click", (evento) => {
+    let currentSection = "";
 
-        evento.preventDefault();
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
 
-        const moto = botao
-            .closest("article")
-            .querySelector("h3")
-            .textContent;
-
-        alert(
-            `🏍️ ${moto}\n\nEm breve você poderá conferir mais detalhes sobre este modelo.`
-        );
-    });
-
-});
-
-
-// ==============================
-// FORMULÁRIO DE CONTATO
-// ==============================
-
-const formulario = document.querySelector("form");
-
-if (formulario) {
-
-    formulario.addEventListener("submit", (evento) => {
-
-        evento.preventDefault();
-
-        const nome = document
-            .querySelector("#nome")
-            .value
-            .trim();
-
-        const email = document
-            .querySelector("#email")
-            .value
-            .trim();
-
-        const mensagem = document
-            .querySelector("#mensagem")
-            .value
-            .trim();
-
-        if (!nome || !email || !mensagem) {
-
-            alert("⚠️ Preencha todos os campos antes de enviar.");
-
-            return;
+        if (
+            window.scrollY >= sectionTop &&
+            window.scrollY < sectionTop + sectionHeight
+        ) {
+            currentSection = section.getAttribute("id");
         }
-
-        alert(
-            `✅ Mensagem enviada!\n\nObrigado, ${nome}! A MotoZone recebeu sua mensagem.`
-        );
-
-        formulario.reset();
     });
 
+    navLinks.forEach(link => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+        }
+    });
+});
+
+
+// ===============================
+// ANO AUTOMÁTICO DO RODAPÉ
+// ===============================
+
+const yearElement = document.querySelector("#year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
 }
 
 
-// ==============================
-// MENU ATIVO
-// ==============================
+// ===============================
+// EFEITO DE ENTRADA DA PÁGINA
+// ===============================
 
-const linksMenu = document.querySelectorAll("nav a");
-
-linksMenu.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        linksMenu.forEach((item) => {
-            item.classList.remove("ativo");
-        });
-
-        link.classList.add("ativo");
-    });
-
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
 });
+
+console.log("MOTOZONE carregado com sucesso! 🏍️");
