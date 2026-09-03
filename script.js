@@ -1,45 +1,129 @@
-// =========================
-// MENU MOBILE
-// =========================
+// ==============================
+// MOTOZONE - JAVASCRIPT
+// ==============================
 
-const menuButton = document.getElementById("menu-button");
-const navMenu = document.getElementById("nav-menu");
+// ANO AUTOMÁTICO NO RODAPÉ
 
-menuButton.addEventListener("click", function () {
+const ano = new Date().getFullYear();
 
-    navMenu.classList.toggle("active");
+const rodape = document.querySelector("footer p:last-child");
+
+if (rodape) {
+    rodape.innerHTML = `&copy; ${ano} MotoZone. Todos os direitos reservados.`;
+}
+
+
+// ==============================
+// ANIMAÇÃO AO APARECER NA TELA
+// ==============================
+
+const elementos = document.querySelectorAll(
+    "#motos article, #categorias article, #sobre, #contato"
+);
+
+const observador = new IntersectionObserver(
+    (entradas) => {
+        entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add("visivel");
+            }
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+elementos.forEach((elemento) => {
+    elemento.classList.add("animar");
+    observador.observe(elemento);
+});
+
+
+// ==============================
+// LINKS "VER MODELO"
+// ==============================
+
+const botoesModelo = document.querySelectorAll("#motos article a");
+
+botoesModelo.forEach((botao) => {
+
+    botao.addEventListener("click", (evento) => {
+
+        evento.preventDefault();
+
+        const moto = botao
+            .closest("article")
+            .querySelector("h3")
+            .textContent;
+
+        alert(
+            `🏍️ ${moto}\n\nEm breve você poderá conferir mais detalhes sobre este modelo.`
+        );
+    });
 
 });
 
 
-// =========================
-// BOTÃO PRINCIPAL
-// =========================
+// ==============================
+// FORMULÁRIO DE CONTATO
+// ==============================
 
-const actionButton = document.getElementById("action-button");
-const message = document.getElementById("message");
+const formulario = document.querySelector("form");
 
-actionButton.addEventListener("click", function () {
+if (formulario) {
 
-    message.textContent =
-        "Excelente! Você deu o primeiro passo. 🚀";
+    formulario.addEventListener("submit", (evento) => {
 
-    actionButton.textContent =
-        "Vamos começar!";
+        evento.preventDefault();
 
-});
+        const nome = document
+            .querySelector("#nome")
+            .value
+            .trim();
+
+        const email = document
+            .querySelector("#email")
+            .value
+            .trim();
+
+        const mensagem = document
+            .querySelector("#mensagem")
+            .value
+            .trim();
+
+        if (!nome || !email || !mensagem) {
+
+            alert("⚠️ Preencha todos os campos antes de enviar.");
+
+            return;
+        }
+
+        alert(
+            `✅ Mensagem enviada!\n\nObrigado, ${nome}! A MotoZone recebeu sua mensagem.`
+        );
+
+        formulario.reset();
+    });
+
+}
 
 
-// =========================
-// BOTÃO SOBRE
-// =========================
+// ==============================
+// MENU ATIVO
+// ==============================
 
-const learnButton = document.getElementById("learn-button");
+const linksMenu = document.querySelectorAll("nav a");
 
-learnButton.addEventListener("click", function () {
+linksMenu.forEach((link) => {
 
-    alert(
-        "Prepare-se para aprender, criar e experimentar!"
-    );
+    link.addEventListener("click", () => {
+
+        linksMenu.forEach((item) => {
+            item.classList.remove("ativo");
+        });
+
+        link.classList.add("ativo");
+    });
 
 });
